@@ -340,33 +340,30 @@
         .about-right h2{font-size:1.9rem;font-weight:900;color:var(--navy);margin-bottom:1.2rem;line-height:1.2;}
         .about-right h2 .accent{color:var(--red);}
         .about-right p{color:var(--muted);line-height:1.85;font-size:.92rem;margin-bottom:.9rem;}
-        /* Tarihçe Timeline */
-        .tarihce{margin-top:4rem;}
-        .tarihce-title{text-align:center;font-size:1.6rem;font-weight:900;color:var(--navy);margin-bottom:.5rem;}
+        /* Tarihçe Timeline – kompakt */
+        .tarihce{margin-top:2.5rem;}
+        .tarihce-title{text-align:center;font-size:1.25rem;font-weight:900;color:var(--navy);margin-bottom:.3rem;}
         .tarihce-title .accent{color:var(--primary);}
-        .tarihce-line-wrap{display:flex;flex-direction:column;gap:0;margin-top:2.5rem;position:relative;}
-        .tarihce-line-wrap::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--primary),var(--gold));transform:translateX(-50%);border-radius:2px;}
-        .t-item{display:flex;align-items:flex-start;gap:1.5rem;margin-bottom:2.5rem;position:relative;}
-        .t-item:nth-child(odd){flex-direction:row;}
-        .t-item:nth-child(even){flex-direction:row-reverse;}
-        .t-item:nth-child(odd) .t-box{text-align:right;margin-right:calc(50% + 1.5rem);}
-        .t-item:nth-child(even) .t-box{text-align:left;margin-left:calc(50% + 1.5rem);}
-        .t-dot{position:absolute;left:50%;top:.4rem;transform:translateX(-50%);width:18px;height:18px;background:var(--primary);border:3px solid #fff;border-radius:50%;box-shadow:0 0 0 3px var(--primary);z-index:2;}
-        .t-year{font-size:1.5rem;font-weight:900;color:var(--primary);line-height:1;}
-        .t-desc{font-size:.85rem;color:var(--muted);line-height:1.6;margin-top:.3rem;}
-        .t-box{max-width:280px;}
+        .tarihce-line-wrap{display:flex;flex-direction:row;flex-wrap:wrap;gap:.6rem;margin-top:1.5rem;justify-content:center;}
+        .tarihce-line-wrap::before{display:none;}
+        .t-item{display:flex;flex-direction:column;align-items:center;gap:.4rem;position:relative;flex:1;min-width:130px;max-width:180px;}
+        .t-item:nth-child(odd),.t-item:nth-child(even){flex-direction:column;}
+        .t-item:nth-child(odd) .t-box,.t-item:nth-child(even) .t-box{text-align:center;margin:0;}
+        .t-dot{position:static;transform:none;width:12px;height:12px;background:var(--primary);border:2px solid #fff;border-radius:50%;box-shadow:0 0 0 2px var(--primary);}
+        .t-year{font-size:1rem;font-weight:900;color:var(--primary);line-height:1;}
+        .t-desc{font-size:.75rem;color:var(--muted);line-height:1.5;margin-top:.2rem;}
+        .t-box{max-width:160px;}
         /* Vizyon Misyon */
-        .vizyon-wrap{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:2rem;}
-        .vm-card{background:#fff;border-radius:16px;padding:2rem;box-shadow:0 4px 24px rgba(0,0,0,.07);border-top:4px solid var(--primary);position:relative;overflow:hidden;}
+        .vizyon-wrap{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.5rem;}
+        .vm-card{background:#fff;border-radius:14px;padding:1.3rem 1.5rem;box-shadow:0 4px 24px rgba(0,0,0,.07);border-top:4px solid var(--primary);position:relative;overflow:hidden;}
         .vm-card.misyon{border-top-color:var(--gold);}
-        .vm-card .vm-ico{font-size:2.5rem;margin-bottom:1rem;}
-        .vm-card h3{font-size:1.1rem;font-weight:800;color:var(--navy);margin-bottom:.8rem;}
-        .vm-card p{font-size:.85rem;color:var(--muted);line-height:1.75;}
+        .vm-card .vm-ico{font-size:1.8rem;margin-bottom:.6rem;}
+        .vm-card h3{font-size:.95rem;font-weight:800;color:var(--navy);margin-bottom:.5rem;}
+        .vm-card p{font-size:.8rem;color:var(--muted);line-height:1.65;}
         @media(max-width:768px){
-            .tarihce-line-wrap::before{left:20px;}
-            .t-item,.t-item:nth-child(even){flex-direction:column;}
-            .t-item:nth-child(odd) .t-box,.t-item:nth-child(even) .t-box{text-align:left;margin:0 0 0 3rem;max-width:100%;}
-            .t-dot{left:20px;}
+            .tarihce-line-wrap{flex-direction:column;align-items:flex-start;padding-left:1rem;}
+            .t-item{flex-direction:row;max-width:100%;min-width:auto;}
+            .t-item:nth-child(odd) .t-box,.t-item:nth-child(even) .t-box{text-align:left;}
             .vizyon-wrap{grid-template-columns:1fr;}
         }
         .feat-list{list-style:none;margin-top:1.4rem;}
@@ -598,15 +595,28 @@
         .gitem.hidden{display:none;}
 
         /* ── TESİSLER ── */
-        .tesis-card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:.3s;}
-        .tesis-card:hover{transform:translateY(-6px);box-shadow:0 12px 40px rgba(0,0,0,.13);}
-        .tesis-img{height:200px;overflow:hidden;position:relative;}
-        .tesis-img img{width:100%;height:100%;object-fit:cover;transition:.4s;}
-        .tesis-card:hover .tesis-img img{transform:scale(1.05);}
-        .tesis-placeholder{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:3.5rem;gap:.5rem;}
-        .tesis-body{padding:1.3rem;}
-        .tesis-body h3{font-size:1rem;font-weight:800;color:#0d1b3e;margin-bottom:.5rem;}
-        .tesis-body p{font-size:.83rem;color:#666;line-height:1.7;}
+        .tesis-brans-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.1rem;}
+        .tesis-brans-card{position:relative;height:190px;border-radius:14px;overflow:hidden;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.12);}
+        .tesis-brans-card img{width:100%;height:100%;object-fit:cover;transition:.4s;}
+        .tesis-brans-card:hover img{transform:scale(1.07);filter:brightness(.55);}
+        .tesis-brans-overlay{position:absolute;inset:0;background:rgba(0,0,0,.38);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;transition:.3s;}
+        .tesis-brans-card:hover .tesis-brans-overlay{background:rgba(13,27,62,.62);}
+        .tesis-brans-ico{font-size:2.2rem;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));}
+        .tesis-brans-name{color:#fff;font-weight:800;font-size:1.1rem;text-shadow:0 2px 8px rgba(0,0,0,.5);}
+        .tesis-brans-hint{color:rgba(255,255,255,.8);font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;margin-top:.2rem;}
+        /* Modal Slider */
+        #tesis-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9100;align-items:center;justify-content:center;}
+        #tesis-modal.open{display:flex;}
+        .tesis-modal-inner{position:relative;width:90vw;max-width:860px;}
+        .tesis-modal-img{width:100%;max-height:72vh;object-fit:contain;border-radius:12px;display:block;}
+        .tesis-modal-caption{color:#fff;text-align:center;margin-top:.8rem;font-size:.9rem;opacity:.85;}
+        .tesis-modal-counter{color:rgba(255,255,255,.5);text-align:center;font-size:.75rem;margin-top:.3rem;}
+        .tesis-modal-close{position:fixed;top:1.2rem;right:1.5rem;background:rgba(255,255,255,.15);border:none;color:#fff;width:40px;height:40px;border-radius:50%;font-size:1.2rem;cursor:pointer;z-index:9101;}
+        .tesis-modal-close:hover{background:rgba(255,255,255,.3);}
+        .tesis-slider-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.18);border:none;color:#fff;width:46px;height:46px;border-radius:50%;font-size:1.3rem;cursor:pointer;transition:.2s;}
+        .tesis-slider-btn:hover{background:rgba(255,255,255,.35);}
+        .tesis-slider-prev{left:-58px;}.tesis-slider-next{right:-58px;}
+        @media(max-width:768px){.tesis-slider-prev{left:-2px;}.tesis-slider-next{right:-2px;}}
 
         /* ── S.S.S ── */
         .sss-item{border:1px solid #e8e8e8;border-radius:12px;margin-bottom:.8rem;overflow:hidden;background:white;}
@@ -1051,6 +1061,7 @@
                         <span class="brans-pill">Yakında IG</span>
                     </div>
                 </div>
+            </div>
             <!-- Jimnastik -->
             <div class="brans-card b-jimnastik reveal">
                 <div class="brans-top"><div class="bicon">🤸</div><div class="bname">Jimnastik</div></div>
@@ -1080,7 +1091,7 @@
                         style="width:100%;height:100%;object-fit:cover;object-position:center top;"
                         onerror="this.style.display='none';this.parentElement.style.background='#1a3a6e';this.parentElement.innerHTML+='<div style=\'display:flex;align-items:center;justify-content:center;height:100%;font-size:4rem;\'>👨‍💼</div>'">
                 </div>
-                <div style="color:#f0c040;font-size:.75rem;font-weight:800;letter-spacing:2px;margin-top:1rem;text-transform:uppercase;">Başkan & Baş Antrenör</div>
+                <div style="color:#f0c040;font-size:.75rem;font-weight:800;letter-spacing:2px;margin-top:1rem;text-transform:uppercase;">Başkan</div>
                 <div style="color:white;font-weight:700;margin-top:.3rem;font-size:.95rem;">Doç. Dr. Osman Tolga Şinoforoğlu</div>
             </div>
             <div style="flex:1;min-width:280px;">
@@ -1101,114 +1112,81 @@
             <h2 class="sec-title">Tesisle<span class="accent">rimiz</span></h2>
             <div class="sec-line"></div>
         </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;">
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-havuz.jpg" alt="Olimpik Yüzme Havuzu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Olimpik Yüzme Havuzu</h3>
-                    <p>25 metrelik kapalı olimpik yüzme havuzu. Profesyonel filtre sistemi ve ısıtma altyapısıyla yıl boyu kullanıma açık.</p>
-                </div>
-            </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-havuz-buyuk.jpg" alt="Yüzme Havuzu Tribün" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Yüzme Havuzu – Tribün</h3>
-                    <p>Yarışma organizasyonlarına ev sahipliği yapan tribünlü olimpik havuz. Ulusal müsabakalara uygun standartlarda yapılandırılmıştır.</p>
+        <div class="tesis-brans-grid">
+            <div class="tesis-brans-card reveal" onclick="openTesis('yuzme')">
+                <img src="tesis-havuz.jpg" alt="Yüzme" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🏊</div>
+                    <div class="tesis-brans-name">Yüzme</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
             </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-basketbol-buyuk.jpg" alt="Büyük Basketbol Salonu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Büyük Spor Salonu</h3>
-                    <p>Basketbol ve voleybol müsabakalarına ev sahipliği yapan modern salon. Tribünlü yapısıyla resmi organizasyonlara tam uyumlu.</p>
-                </div>
-            </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-basketbol.jpg" alt="Basketbol Salonu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Basketbol & Voleybol Salonu</h3>
-                    <p>Çok amaçlı spor parkesi zemine sahip salon. Basketbol, voleybol ve hentbol branşlarına hizmet vermektedir.</p>
+            <div class="tesis-brans-card reveal" onclick="openTesis('basketbol')">
+                <img src="tesis-basketbol-buyuk.jpg" alt="Basketbol" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🏀</div>
+                    <div class="tesis-brans-name">Basketbol</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
             </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-jimnastik.jpg" alt="Jimnastik Salonu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Jimnastik Salonu</h3>
-                    <p>Mat zemin ve ahşap merdiven aksesuarlarıyla donatılmış profesyonel jimnastik salonu. Artistik ve ritmik jimnastik antrenmanlarına uygun.</p>
-                </div>
-            </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-trambolin.jpg" alt="Trambolin Salonu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Trambolin Salonu</h3>
-                    <p>Profesyonel trambolin ekipmanlarıyla donatılmış özel salon. Jimnastik branşının hava akrobasi çalışmalarına yönelik tasarlanmıştır.</p>
+            <div class="tesis-brans-card reveal" onclick="openTesis('voleybol')">
+                <img src="tesis-basketbol.jpg" alt="Voleybol" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🏐</div>
+                    <div class="tesis-brans-name">Voleybol</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
             </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-acik-tenis.jpg" alt="Açık Tenis Kortları" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Açık Tenis Kortları</h3>
-                    <p>DPÜ yerleşkesinde profesyonel yüzeye sahip açık tenis kortları. Ilkbahar ve yaz sezonunda bireysel ve grup antrenmanlarına açık.</p>
-                </div>
-            </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-kapali-tenis.jpg" alt="Kapalı Tenis Kortları" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Kapalı Tenis Kortları</h3>
-                    <p>Cam çatılı büyük kapalı tenis salonu. Her hava koşulunda kesintisiz antrenman imkânı sunan yıl boyu aktif tesis.</p>
+            <div class="tesis-brans-card reveal" onclick="openTesis('tenis')">
+                <img src="tesis-kapali-tenis.jpg" alt="Tenis" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🎾</div>
+                    <div class="tesis-brans-name">Tenis</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
             </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-pilates.jpg" alt="Pilates Stüdyosu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Pilates Stüdyosu</h3>
-                    <p>Modern reformer cihazlarıyla donatılmış özel pilates stüdyosu. Küçük gruplarla kişisel antrenman odaklı programlar uygulanmaktadır.</p>
-                </div>
-            </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-dans.jpg" alt="Dans & Zumba Stüdyosu" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Dans & Zumba Stüdyosu</h3>
-                    <p>Aynalı geniş dans stüdyosu. Zumba, dans fitness ve grup egzersiz derslerine ev sahipliği yapan ferah ve aydınlık alan.</p>
+            <div class="tesis-brans-card reveal" onclick="openTesis('pilates')">
+                <img src="tesis-pilates.jpg" alt="Pilates" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🧘</div>
+                    <div class="tesis-brans-name">Pilates</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
             </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-basketbol-kucuk.jpg" alt="Çok Amaçlı Salon" loading="lazy">
-                </div>
-                <div class="tesis-body">
-                    <h3>Çok Amaçlı İdman Salonu</h3>
-                    <p>Basketbol ve futsal antrenmanlarına uygun ikinci spor salonu. Günlük antrenman programları için birincil antrenman alanı.</p>
+            <div class="tesis-brans-card reveal" onclick="openTesis('zumba')">
+                <img src="tesis-dans.jpg" alt="Zumba" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">💃</div>
+                    <div class="tesis-brans-name">Zumba</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
             </div>
-            <div class="tesis-card reveal">
-                <div class="tesis-img">
-                    <img src="tesis-bina.jpg" alt="DPÜ Spor Salonu" loading="lazy">
+            <div class="tesis-brans-card reveal" onclick="openTesis('jimnastik')">
+                <img src="tesis-jimnastik.jpg" alt="Jimnastik" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🤸</div>
+                    <div class="tesis-brans-name">Jimnastik</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
-                <div class="tesis-body">
-                    <h3>DPÜ Spor Salonu</h3>
-                    <p>Dumlupınar Üniversitesi ana spor kompleksi. Tüm kapalı branş faaliyetleri bu modern yapı bünyesinde yürütülmektedir.</p>
+            </div>
+            <div class="tesis-brans-card reveal" onclick="openTesis('masatenisi')">
+                <img src="tesis-basketbol-kucuk.jpg" alt="Masa Tenisi" loading="lazy">
+                <div class="tesis-brans-overlay">
+                    <div class="tesis-brans-ico">🏓</div>
+                    <div class="tesis-brans-name">Masa Tenisi</div>
+                    <div class="tesis-brans-hint">Fotoğrafları gör</div>
                 </div>
+            </div>
+        </div>
+        <!-- Tesis Slider Modal -->
+        <div id="tesis-modal">
+            <button class="tesis-modal-close" onclick="closeTesis()">✕</button>
+            <div class="tesis-modal-inner">
+                <button class="tesis-slider-btn tesis-slider-prev" onclick="slideMove(-1)">&#8592;</button>
+                <img class="tesis-modal-img" id="tesis-modal-img" src="" alt="">
+                <button class="tesis-slider-btn tesis-slider-next" onclick="slideMove(1)">&#8594;</button>
+                <div class="tesis-modal-caption" id="tesis-modal-caption"></div>
+                <div class="tesis-modal-counter" id="tesis-modal-counter"></div>
             </div>
         </div>
     </div>
@@ -1338,7 +1316,7 @@
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#0066cc"></div>🏊 Yüzme</div></td>
                         <td>–</td>
-                        <td><span class="time-chip">19:00–20:30</span> <small style="color:#aaa;font-size:.65rem;">Kara</small></td>
+                        <td><span class="time-chip">19:00–20:30</span></td>
                         <td><span class="time-chip">19:00–20:30</span> <small style="color:#aaa;font-size:.65rem;">Kara</small></td>
                         <td><span class="time-chip">19:00–20:30</span></td>
                         <td><span class="time-chip">19:00–20:30</span></td>
@@ -1430,10 +1408,10 @@
                     <div style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-size:5rem;">👨‍💼</div>
                 </div>
                 <div class="antrenor-body">
-                    <div style="display:inline-block;background:var(--gold);color:var(--navy);font-size:.65rem;font-weight:800;padding:.25rem .8rem;border-radius:20px;margin-bottom:.5rem;letter-spacing:1px;">BAŞKAN & BAŞ ANTRENÖR</div>
+                    <div style="display:inline-block;background:var(--gold);color:var(--navy);font-size:.65rem;font-weight:800;padding:.25rem .8rem;border-radius:20px;margin-bottom:.5rem;letter-spacing:1px;">BAŞKAN</div>
                     <h3 style="font-size:1.1rem;">Doç. Dr. Osman Tolga Şinoforoğlu</h3>
                     <div class="branch">Dumlupınar Üniversitesi Spor Kulübü</div>
-                    <p>DPÜ Spor Bilimleri Fakültesi öğretim üyesi. Kulübümüzün kurucu başkanı ve baş antrenörü olarak tüm branşları akademik düzeyde yönetmektedir.</p>
+                    <p>DPÜ Spor Bilimleri Fakültesi öğretim üyesi. Kulübümüzün başkanı olarak tüm branşları akademik düzeyde yönetmektedir.</p>
                 </div>
             </div>
         </div>
@@ -1494,15 +1472,13 @@
             <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme6.jpg" alt="DPÜ Yüzme Antrenmanı"><div class="g-overlay">🔍</div></div>
             <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme7.jpg" alt="DPÜ Yüzme Sporcuları"><div class="g-overlay">🔍</div></div>
             <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme8.jpg" alt="DPÜ Yüzme Çalışması"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="basketbol" onclick="openLb(this)"><img src="tesis-basketbol-buyuk.jpg" alt="DPÜ Basketbol Salonu"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="basketbol" onclick="openLb(this)"><img src="tesis-basketbol.jpg" alt="DPÜ Basketbol Salonu"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="basketbol" onclick="openLb(this)"><img src="tesis-basketbol-kucuk.jpg" alt="DPÜ Çok Amaçlı Salon"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="tenis" onclick="openLb(this)"><img src="tesis-acik-tenis.jpg" alt="DPÜ Açık Tenis Kortları"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="tenis" onclick="openLb(this)"><img src="tesis-kapali-tenis.jpg" alt="DPÜ Kapalı Tenis Kortları"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="pilates" onclick="openLb(this)"><img src="tesis-pilates.jpg" alt="DPÜ Pilates Stüdyosu"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="zumba" onclick="openLb(this)"><img src="tesis-dans.jpg" alt="DPÜ Dans & Zumba Stüdyosu"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="jimnastik" onclick="openLb(this)"><img src="tesis-jimnastik.jpg" alt="DPÜ Jimnastik Salonu"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="jimnastik" onclick="openLb(this)"><img src="tesis-trambolin.jpg" alt="DPÜ Trambolin Salonu"><div class="g-overlay">🔍</div></div>
+            <div class="gitem reveal" data-brans="basketbol"><div class="gplaceholder" style="background:linear-gradient(135deg,#c8102e,#ff6b35)"><div class="gico">🏀</div><span>Yakında</span></div></div>
+            <div class="gitem reveal" data-brans="voleybol"><div class="gplaceholder" style="background:linear-gradient(135deg,#0d1b3e,#1a3a6e)"><div class="gico">🏐</div><span>Yakında</span></div></div>
+            <div class="gitem reveal" data-brans="tenis"><div class="gplaceholder" style="background:linear-gradient(135deg,#2e7d32,#66bb6a)"><div class="gico">🎾</div><span>Yakında</span></div></div>
+            <div class="gitem reveal" data-brans="masatenisi"><div class="gplaceholder" style="background:linear-gradient(135deg,#6a1b9a,#ab47bc)"><div class="gico">🏓</div><span>Yakında</span></div></div>
+            <div class="gitem reveal" data-brans="pilates"><div class="gplaceholder" style="background:linear-gradient(135deg,#004d40,#26a69a)"><div class="gico">🧘</div><span>Yakında</span></div></div>
+            <div class="gitem reveal" data-brans="zumba"><div class="gplaceholder" style="background:linear-gradient(135deg,#880e4f,#f06292)"><div class="gico">💃</div><span>Yakında</span></div></div>
+            <div class="gitem reveal" data-brans="jimnastik"><div class="gplaceholder" style="background:linear-gradient(135deg,#3a0068,#9c4dcc)"><div class="gico">🤸</div><span>Yakında</span></div></div>
         </div>
         <div class="ig-cta">
             <p>Daha fazla fotoğraf ve video için Instagram'ı takip edin!</p>
@@ -1978,6 +1954,49 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
         document.getElementById('ham').classList.remove('open');
     });
 });
+
+// ── TESİS SLIDER ──
+const tesisData = {
+    yuzme:      [{src:'tesis-havuz.jpg', cap:'Olimpik Yüzme Havuzu'}, {src:'tesis-havuz-buyuk.jpg', cap:'Yüzme Havuzu – Tribün'}],
+    basketbol:  [{src:'tesis-basketbol-buyuk.jpg', cap:'Ana Spor Salonu – Tribün'}, {src:'tesis-basketbol.jpg', cap:'Basketbol Salonu'}],
+    voleybol:   [{src:'tesis-basketbol-buyuk.jpg', cap:'Voleybol Salonu – Ana Spor Merkezi'}, {src:'tesis-basketbol.jpg', cap:'Çok Amaçlı Salon'}],
+    tenis:      [{src:'tesis-kapali-tenis.jpg', cap:'Kapalı Tenis Kortları'}, {src:'tesis-acik-tenis.jpg', cap:'Açık Tenis Kortları'}],
+    pilates:    [{src:'tesis-pilates.jpg', cap:'Pilates Stüdyosu'}],
+    zumba:      [{src:'tesis-dans.jpg', cap:'Zumba Salonu'}],
+    jimnastik:  [{src:'tesis-jimnastik.jpg', cap:'Jimnastik Salonu'}, {src:'tesis-trambolin.jpg', cap:'Trambolin Salonu'}],
+    masatenisi: [{src:'tesis-basketbol-kucuk.jpg', cap:'Masa Tenisi Salonu'}],
+};
+let tsItems=[], tsIdx=0;
+function openTesis(brans){
+    tsItems = tesisData[brans] || [];
+    if(!tsItems.length) return;
+    tsIdx=0;
+    showTesisSlide();
+    document.getElementById('tesis-modal').classList.add('open');
+    document.body.style.overflow='hidden';
+}
+function showTesisSlide(){
+    const d=tsItems[tsIdx];
+    document.getElementById('tesis-modal-img').src=d.src;
+    document.getElementById('tesis-modal-img').alt=d.cap;
+    document.getElementById('tesis-modal-caption').textContent=d.cap;
+    document.getElementById('tesis-modal-counter').textContent=tsItems.length>1?(tsIdx+1)+' / '+tsItems.length:'';
+}
+function slideMove(dir){
+    tsIdx=(tsIdx+dir+tsItems.length)%tsItems.length;
+    showTesisSlide();
+}
+function closeTesis(){
+    document.getElementById('tesis-modal').classList.remove('open');
+    document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{
+    if(!document.getElementById('tesis-modal').classList.contains('open')) return;
+    if(e.key==='ArrowRight') slideMove(1);
+    if(e.key==='ArrowLeft')  slideMove(-1);
+    if(e.key==='Escape')     closeTesis();
+});
+document.getElementById('tesis-modal').addEventListener('click',function(e){if(e.target===this)closeTesis();});
 
 // ── LIGHTBOX ──
 let lbItems=[], lbIdx=0;
