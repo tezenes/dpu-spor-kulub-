@@ -1806,9 +1806,9 @@
 
 <script>
 // ── LOADER ──
-window.addEventListener('load', () => {
-    setTimeout(() => document.getElementById('loader').classList.add('hide'), 1800);
-});
+function hideLoader(){ document.getElementById('loader').classList.add('hide'); }
+setTimeout(hideLoader, 2200); // en fazla 2.2sn bekle
+window.addEventListener('load', () => setTimeout(hideLoader, 400));
 
 // ── SPORT BACKGROUND ANIMATION ──
 (function(){
