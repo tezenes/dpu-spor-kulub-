@@ -492,6 +492,9 @@
         .antrenor-list{display:flex;flex-direction:column;}
         .antrenor-row{display:flex;align-items:center;justify-content:space-between;padding:.7rem 1.2rem;border-bottom:1px solid #f0f0f0;gap:.5rem;}
         .antrenor-row:last-child{border-bottom:none;}
+        .antrenor-row-left{display:flex;align-items:center;gap:.7rem;}
+        .antrenor-foto{width:38px;height:38px;border-radius:50%;object-fit:cover;flex-shrink:0;border:2px solid #e8e8e8;}
+        .antrenor-foto-fallback{width:38px;height:38px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;color:#fff;letter-spacing:-.5px;}
         .antrenor-row-name{font-size:.9rem;font-weight:700;color:var(--navy);}
         .antrenor-row-role{font-size:.72rem;color:var(--red);font-weight:600;text-align:right;white-space:nowrap;}
 
@@ -2153,6 +2156,45 @@ _DPÜ Spor Kulübü web sitesi üzerinden gönderildi._`;
         f.reset();
     },600);
 }
+
+// ── ANTRENÖR FOTOĞRAF AVATARLARI ──
+(function(){
+  const colors = ['#0066cc','#b71c1c','#1b5e20','#880e4f','#4a148c','#e65100','#006064','#37474f'];
+  document.querySelectorAll('.antrenor-row').forEach(row => {
+    const nameEl = row.querySelector('.antrenor-row-name');
+    if (!nameEl) return;
+    const name = nameEl.textContent.trim();
+    // Dosya adı: "Gizem Yerlikaya" → "gizem-yerlikaya"
+    const slug = name.toLowerCase()
+      .replace(/ğ/g,'g').replace(/ü/g,'u').replace(/ş/g,'s')
+      .replace(/ı/g,'i').replace(/ö/g,'o').replace(/ç/g,'c')
+      .replace(/\s+/g,'-');
+    const initials = name.split(' ').slice(0,2).map(w=>w[0]).join('').toUpperCase();
+    const color = colors[name.charCodeAt(0) % colors.length];
+
+    // Sol taraf wrapper
+    const left = document.createElement('div');
+    left.className = 'antrenor-row-left';
+
+    // Fotoğraf elementi
+    const img = document.createElement('img');
+    img.className = 'antrenor-foto';
+    img.alt = name;
+    img.src = 'images/antrenor-' + slug + '.jpg';
+    img.onerror = function(){
+      // Fotoğraf yoksa baş harf avatarı göster
+      const fb = document.createElement('div');
+      fb.className = 'antrenor-foto-fallback';
+      fb.style.background = color;
+      fb.textContent = initials;
+      this.parentNode.replaceChild(fb, this);
+    };
+
+    left.appendChild(img);
+    row.insertBefore(left, nameEl);
+    left.appendChild(nameEl);
+  });
+})();
 </script>
 
 <!-- WhatsApp Sabit Butonu -->
