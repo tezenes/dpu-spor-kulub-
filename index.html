@@ -522,9 +522,6 @@
         .gitem:hover .gplaceholder .gico{transform:scale(1.25);}
         .gitem img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;transition:.4s ease;}
         .gitem:hover img{transform:scale(1.08);filter:brightness(.82);}
-        .gitem:nth-child(1){grid-column:span 2;}
-        .gitem:nth-child(5){grid-column:span 2;}
-        .gitem:nth-child(7){grid-column:span 2;}
         .g-overlay{position:absolute;inset:0;background:rgba(6,182,212,.8);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;font-size:2.2rem;opacity:0;transition:.35s cubic-bezier(.4,0,.2,1);border-radius:14px;}
         .g-overlay span{font-size:.72rem;font-weight:800;letter-spacing:2px;color:#fff;text-transform:uppercase;margin-top:.3rem;}
         .gitem:hover .g-overlay{opacity:1;}
@@ -1047,7 +1044,7 @@
             </div>
             <!-- Pilates -->
             <div class="brans-card b-pilates reveal">
-                <div class="brans-top"><img src="brans-pilates.jpg" alt="Pilates" loading="lazy" style="object-position:center top;"><div class="bicon">🧘</div><div class="bname">Pilates</div></div>
+                <div class="brans-top"><img src="brans-pilates.jpg" alt="Pilates" loading="lazy" style="object-position:center center;"><div class="bicon">🧘</div><div class="bname">Pilates</div></div>
                 <div class="brans-body">
                     <p>Reformer ve mat pilates programlarıyla vücudunu güçlendir, esnekliğini artır. Postür düzeltme ve core güçlendirme odaklı profesyonel eğitim.</p>
                     <div class="brans-info">
@@ -1505,8 +1502,7 @@
             <div class="antrenor-brans-group reveal">
                 <div class="antrenor-brans-header abh-pilates">🧘 Pilates</div>
                 <div class="antrenor-list">
-                    <div class="antrenor-row"><span class="antrenor-row-name">Şahika Yurttaş</span><span class="antrenor-row-role">Baş Antrenör</span></div>
-                    <div class="antrenor-row"><span class="antrenor-row-name">Nur Seda Ay</span><span class="antrenor-row-role">Antrenör</span></div>
+                    <div class="antrenor-row"><span class="antrenor-row-name">Nur Seda Ay</span><span class="antrenor-row-role">Baş Antrenör</span></div>
                     <div class="antrenor-row"><span class="antrenor-row-name">Özge Başar</span><span class="antrenor-row-role">Antrenör</span></div>
                     <div class="antrenor-row"><span class="antrenor-row-name">Eylül Beste Zeren</span><span class="antrenor-row-role">Antrenör</span></div>
                 </div>
@@ -1552,8 +1548,6 @@
             <button class="galeri-filter" onclick="filterGaleri('jimnastik',this)">🤸 Jimnastik</button>
         </div>
         <div class="galeri-grid" id="galeriGrid">
-            <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme1.jpg" alt="DPÜ Yüzme Antrenmanı"><div class="g-overlay">🔍</div></div>
-            <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme2.jpg" alt="DPÜ Yüzme"><div class="g-overlay">🔍</div></div>
             <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme3.jpg" alt="DPÜ Yüzme"><div class="g-overlay">🔍</div></div>
             <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme4.jpg" alt="DPÜ Yüzme"><div class="g-overlay">🔍</div></div>
             <div class="gitem reveal" data-brans="yuzme" onclick="openLb(this)"><img src="yuzme5.jpg" alt="DPÜ Yüzme Sporcuları"><div class="g-overlay">🔍</div></div>
