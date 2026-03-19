@@ -279,7 +279,7 @@
             animation:heroGlow 3s ease-in-out infinite;
             filter:drop-shadow(0 0 30px rgba(6,182,212,.6));
         }
-        .hero-logo img{width:100%;height:100%;object-fit:contain;mix-blend-mode:screen;}
+        .hero-logo img{width:100%;height:100%;object-fit:contain;}
         @keyframes heroGlow{0%,100%{box-shadow:0 0 60px rgba(6,182,212,.5);}50%{box-shadow:0 0 100px rgba(6,182,212,.8),0 0 160px rgba(6,182,212,.3);}}
         .hero-title{
             font-size:clamp(2rem,5.5vw,4rem);font-weight:900;color:#fff;
@@ -759,8 +759,6 @@
 <!-- NAVBAR -->
 <nav id="nav">
     <a href="#hero" class="nav-brand">
-        <img src="porsuk.png" alt="DPÜ Spor Kulübü" class="nav-brand-logo"
-             onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div style=\'width:52px;height:52px;background:linear-gradient(135deg,#06b6d4,#0d1b3e);border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;font-size:.85rem;color:#fff;border:2px solid #f0c040;\'>DPÜ</div>')">
         <div class="nav-brand-text">
             DPÜ Spor Kulübü
             <small>DUMLUPINAR ÜNİVERSİTESİ</small>
@@ -2148,5 +2146,23 @@ _DPÜ Spor Kulübü web sitesi üzerinden gönderildi._`;
 .wp-fab:hover{transform:scale(1.12);box-shadow:0 6px 28px rgba(37,211,102,.7);}
 @media(max-width:600px){.wp-fab{bottom:18px;right:18px;width:52px;height:52px;}}
 </style>
+<script>
+(function(){
+  function removeWhiteBg(img){
+    var c=document.createElement('canvas');
+    c.width=img.naturalWidth;c.height=img.naturalHeight;
+    var ctx=c.getContext('2d');
+    ctx.drawImage(img,0,0);
+    var d=ctx.getImageData(0,0,c.width,c.height),p=d.data;
+    for(var i=0;i<p.length;i+=4){
+      if(p[i]>220&&p[i+1]>220&&p[i+2]>220) p[i+3]=0;
+    }
+    ctx.putImageData(d,0,0);
+    img.src=c.toDataURL();
+  }
+  var img=document.querySelector('.hero-logo img');
+  if(img){if(img.complete&&img.naturalWidth)removeWhiteBg(img);else img.onload=function(){removeWhiteBg(img);};}
+})();
+</script>
 </body>
 </html>
