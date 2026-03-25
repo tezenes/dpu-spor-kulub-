@@ -731,6 +731,44 @@
             .hero-btns{flex-direction:column;align-items:center;}
             .basari-grid{grid-template-columns:1fr;}
         }
+
+        /* ── BRANŞ MODAL ── */
+        .brans-card{cursor:pointer;}
+        #brans-modal{
+            position:fixed;inset:0;background:rgba(0,0,0,.72);z-index:5000;
+            display:none;align-items:center;justify-content:center;padding:1rem;
+        }
+        #brans-modal.open{display:flex;}
+        .bm-box{
+            background:#fff;border-radius:20px;overflow:hidden;
+            width:100%;max-width:460px;
+            box-shadow:0 24px 70px rgba(0,0,0,.4);
+            animation:bmPop .22s ease;position:relative;
+        }
+        @keyframes bmPop{from{transform:scale(.9);opacity:0;}to{transform:scale(1);opacity:1;}}
+        .bm-img{width:100%;height:200px;object-fit:cover;display:block;}
+        .bm-close{
+            position:absolute;top:10px;right:12px;
+            background:rgba(0,0,0,.5);color:#fff;border:none;
+            width:32px;height:32px;border-radius:50%;font-size:1rem;
+            cursor:pointer;display:flex;align-items:center;justify-content:center;
+            transition:.2s;z-index:10;
+        }
+        .bm-close:hover{background:rgba(0,0,0,.8);}
+        .bm-body{padding:1.6rem 1.8rem 2rem;}
+        .bm-header{display:flex;align-items:center;gap:.7rem;margin-bottom:.8rem;}
+        .bm-icon{font-size:2rem;}
+        .bm-name{font-size:1.4rem;font-weight:900;color:var(--navy);}
+        .bm-desc{color:#555;font-size:.88rem;line-height:1.75;margin-bottom:1.2rem;}
+        .bm-infos{display:flex;flex-direction:column;gap:.45rem;margin-bottom:1.4rem;}
+        .bm-info{display:flex;align-items:center;gap:.6rem;font-size:.82rem;color:#444;}
+        .bm-ig{
+            display:inline-flex;align-items:center;gap:.5rem;
+            background:linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045);
+            color:#fff;text-decoration:none;padding:.52rem 1.3rem;
+            border-radius:30px;font-size:.82rem;font-weight:700;transition:.2s;
+        }
+        .bm-ig:hover{opacity:.85;transform:translateY(-2px);}
     </style>
 </head>
 <body>
@@ -979,7 +1017,7 @@
         </div>
         <div class="brans-grid">
             <!-- Yüzme -->
-            <div class="brans-card b-yuzme reveal">
+            <div class="brans-card b-yuzme reveal" onclick="openBM('yuzme')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-yuzme.jpg" alt="Yüzme" loading="lazy"><div class="bicon">🏊</div><div class="bname">Yüzme</div></div>
                 <div class="brans-body">
                     <p>Olimpik havuzda profesyonel yüzme eğitimi. Çocuklar ve yetişkinler için ayrı programlarla temel tekniklerden ileri antrenmanlarına kadar.</p>
@@ -993,7 +1031,7 @@
                 </div>
             </div>
             <!-- Basketbol -->
-            <div class="brans-card b-basketbol reveal">
+            <div class="brans-card b-basketbol reveal" onclick="openBM('basketbol')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-basketbol.jpg" alt="Basketbol" loading="lazy"><div class="bicon">🏀</div><div class="bname">Basketbol</div></div>
                 <div class="brans-body">
                     <p>6-16 yaş kız ve erkek çocuklara yönelik basketbol eğitimi. Temel becerilerden taktiksel oyun anlayışına kadar kapsamlı gelişim.</p>
@@ -1009,7 +1047,7 @@
                 </div>
             </div>
             <!-- Voleybol -->
-            <div class="brans-card b-voleybol reveal">
+            <div class="brans-card b-voleybol reveal" onclick="openBM('voleybol')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-voleybol.jpg" alt="Voleybol" loading="lazy"><div class="bicon">🏐</div><div class="bname">Voleybol</div></div>
                 <div class="brans-body">
                     <p>Voleybolun temel tekniklerini öğrenmek veya mevcut seviyeni geliştirmek isteyenler için kapsamlı eğitim. Takım ruhu ve teknik gelişim.</p>
@@ -1023,7 +1061,7 @@
                 </div>
             </div>
             <!-- Tenis -->
-            <div class="brans-card b-tenis reveal">
+            <div class="brans-card b-tenis reveal" onclick="openBM('tenis')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-tenis.jpg" alt="Tenis" loading="lazy"><div class="bicon">🎾</div><div class="bname">Tenis</div></div>
                 <div class="brans-body">
                     <p>Başlangıçtan ileri seviyeye tenis eğitimi. Raket tutuşundan strateji ve koordinasyona kadar her aşamada profesyonel destek.</p>
@@ -1037,7 +1075,7 @@
                 </div>
             </div>
             <!-- Masa Tenisi -->
-            <div class="brans-card b-masatenisi reveal">
+            <div class="brans-card b-masatenisi reveal" onclick="openBM('masatenisi')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-masatenisi.jpg" alt="Masa Tenisi" loading="lazy"><div class="bicon">🏓</div><div class="bname">Masa Tenisi</div></div>
                 <div class="brans-body">
                     <p>Hız, refleks ve konsantrasyon gerektiren masa tenisinde uzman antrenörlerle gelişimini hızlandır. Her yaştan sporcu için programlar.</p>
@@ -1051,7 +1089,7 @@
                 </div>
             </div>
             <!-- Pilates -->
-            <div class="brans-card b-pilates reveal">
+            <div class="brans-card b-pilates reveal" onclick="openBM('pilates')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-pilates.jpg" alt="Pilates" loading="lazy" style="object-position:center center;"><div class="bicon">🧘</div><div class="bname">Pilates</div></div>
                 <div class="brans-body">
                     <p>Reformer ve mat pilates programlarıyla vücudunu güçlendir, esnekliğini artır. Postür düzeltme ve core güçlendirme odaklı profesyonel eğitim.</p>
@@ -1065,7 +1103,7 @@
                 </div>
             </div>
             <!-- Zumba -->
-            <div class="brans-card b-zumba reveal">
+            <div class="brans-card b-zumba reveal" onclick="openBM('zumba')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-zumba.jpg" alt="Zumba" loading="lazy"><div class="bicon">💃</div><div class="bname">Zumba</div></div>
                 <div class="brans-body">
                     <p>Latin ritimler eşliğinde eğlenceli ve enerjik dans-fitness seansları. Kalori yakmanın bu kadar eğlenceli olabileceğini keşfet!</p>
@@ -1080,7 +1118,7 @@
                 </div>
             </div>
             <!-- Jimnastik -->
-            <div class="brans-card b-jimnastik reveal">
+            <div class="brans-card b-jimnastik reveal" onclick="openBM('jimnastik')" role="button" tabindex="0">
                 <div class="brans-top"><img src="images/brans-jimnastik.jpg" alt="Jimnastik" loading="lazy"><div class="bicon">🤸</div><div class="bname">Jimnastik</div></div>
                 <div class="brans-body">
                     <p>Artistik ve ritmik jimnastik eğitimleriyle denge, koordinasyon ve esnekliğini geliştir. Tüm yaş gruplarına yönelik profesyonel antrenman programları.</p>
@@ -1865,6 +1903,23 @@
 <button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="Yukarı">↑</button>
 
 <!-- LIGHTBOX -->
+<!-- BRANŞ MODAL -->
+<div id="brans-modal" onclick="if(event.target===this)closeBM()">
+    <div class="bm-box">
+        <button class="bm-close" onclick="closeBM()">✕</button>
+        <img class="bm-img" id="bm-img" src="" alt="">
+        <div class="bm-body">
+            <div class="bm-header">
+                <span class="bm-icon" id="bm-icon"></span>
+                <span class="bm-name" id="bm-name"></span>
+            </div>
+            <div class="bm-desc" id="bm-desc"></div>
+            <div class="bm-infos" id="bm-infos"></div>
+            <a class="bm-ig" id="bm-ig" href="#" target="_blank">📷 Instagram</a>
+        </div>
+    </div>
+</div>
+
 <div id="lightbox" onclick="if(event.target===this)closeLb()">
     <button id="lb-close" onclick="closeLb()">✕</button>
     <button id="lb-prev" onclick="moveLb(-1)">‹</button>
@@ -1875,6 +1930,35 @@
 </div>
 
 <script>
+// ── BRANŞ MODAL ──
+const BRANS_DATA = {
+    yuzme:      { icon:'🏊', name:'Yüzme',       img:'images/brans-yuzme.jpg',      desc:'Olimpik havuzda profesyonel yüzme eğitimi. Çocuklar ve yetişkinler için ayrı programlarla temel tekniklerden ileri antrenmanlarına kadar.',                                                     infos:[['👶','Tüm yaş grupları'],['📍','DPÜ Yüzme Havuzu']],                                                           ig:'https://www.instagram.com/dpusk.yuzme',         igH:'@dpusk.yuzme' },
+    basketbol:  { icon:'🏀', name:'Basketbol',    img:'images/brans-basketbol.jpg',  desc:'6-16 yaş kız ve erkek çocuklara yönelik basketbol eğitimi. Temel becerilerden taktiksel oyun anlayışına kadar kapsamlı gelişim.',                                                               infos:[['🎂','6-16 yaş, Kız & Erkek'],['📍','DPÜ Spor Salonu, Kütahya'],['🕐','Cuma 18:30'],['🕐','Cumartesi & Pazar 14:30–17:30']], ig:'https://www.instagram.com/dpusk.basketbol',     igH:'@dpusk.basketbol' },
+    voleybol:   { icon:'🏐', name:'Voleybol',     img:'images/brans-voleybol.jpg',   desc:'Voleybolun temel tekniklerini öğrenmek veya mevcut seviyeni geliştirmek isteyenler için kapsamlı eğitim. Takım ruhu ve teknik gelişim.',                                                       infos:[['👥','Takım eğitimi'],['📍','DPÜ Spor Salonu']],                                                               ig:'https://www.instagram.com/dpuskvoleybol',       igH:'@dpuskvoleybol' },
+    tenis:      { icon:'🎾', name:'Tenis',        img:'images/brans-tenis.jpg',      desc:'Başlangıçtan ileri seviyeye tenis eğitimi. Raket tutuşundan strateji ve koordinasyona kadar her aşamada profesyonel destek.',                                                                   infos:[['🎯','Başlangıç – İleri Seviye'],['📍','DPÜ Tenis Kortları']],                                                 ig:'https://www.instagram.com/dpusktenis',          igH:'@dpusktenis' },
+    masatenisi: { icon:'🏓', name:'Masa Tenisi',  img:'images/brans-masatenisi.jpg', desc:'Hız, refleks ve konsantrasyon gerektiren masa tenisinde uzman antrenörlerle gelişimini hızlandır. Her yaştan sporcu için programlar.',                                                          infos:[['⚡','Hız & Refleks Geliştirme'],['📍','DPÜ Spor Tesisleri']],                                                ig:'https://www.instagram.com/dpusk_masatenisi',    igH:'@dpusk_masatenisi' },
+    pilates:    { icon:'🧘', name:'Pilates',      img:'images/brans-pilates.jpg',    desc:'Reformer ve mat pilates programlarıyla vücudunu güçlendir, esnekliğini artır. Postür düzeltme ve core güçlendirme odaklı profesyonel eğitim.',                                                  infos:[['💪','Reformer & Mat Pilates'],['📍','DPÜ Pilates Stüdyosu']],                                                 ig:'https://www.instagram.com/dpusk.pilates',       igH:'@dpusk.pilates' },
+    zumba:      { icon:'💃', name:'Zumba',        img:'images/brans-zumba.jpg',      desc:'Latin ritimler eşliğinde eğlenceli ve enerjik dans-fitness seansları. Kalori yakmanın bu kadar eğlenceli olabileceğini keşfet!',                                                               infos:[['🎵','Dans & Fitness'],['📍','DPÜ Spor Salonu']],                                                              ig:'https://www.instagram.com/dpusporkulubu',       igH:'@dpusporkulubu' },
+    jimnastik:  { icon:'🤸', name:'Jimnastik',   img:'images/brans-jimnastik.jpg',  desc:'Artistik ve ritmik jimnastik eğitimleriyle denge, koordinasyon ve esnekliğini geliştir. Tüm yaş gruplarına yönelik profesyonel antrenman programları.',                                        infos:[['🤸','Artistik & Ritmik'],['📍','DPÜ Jimnastik Salonu']],                                                      ig:'https://www.instagram.com/dpusk_jimnastik_',    igH:'@dpusk_jimnastik_' },
+};
+function openBM(key){
+    const d = BRANS_DATA[key]; if(!d) return;
+    document.getElementById('bm-img').src  = d.img;
+    document.getElementById('bm-img').alt  = d.name;
+    document.getElementById('bm-icon').textContent = d.icon;
+    document.getElementById('bm-name').textContent = d.name;
+    document.getElementById('bm-desc').textContent = d.desc;
+    document.getElementById('bm-infos').innerHTML  = d.infos.map(([ic,t])=>`<div class="bm-info"><span>${ic}</span><span>${t}</span></div>`).join('');
+    const a = document.getElementById('bm-ig'); a.href = d.ig; a.textContent = '📷 ' + d.igH;
+    document.getElementById('brans-modal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+}
+function closeBM(){
+    document.getElementById('brans-modal').classList.remove('open');
+    document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeBM(); });
+
 // ── LOADER ──
 function hideLoader(){ document.getElementById('loader').classList.add('hide'); }
 setTimeout(hideLoader, 2200); // en fazla 2.2sn bekle
@@ -2043,14 +2127,14 @@ document.querySelectorAll('.nav-links a').forEach(a=>{
 
 // ── TESİS SLIDER ──
 const tesisData = {
-    yuzme:      [{src:'yuzme1.jpg', cap:'Olimpik Yüzme Havuzu'}],
-    basketbol:  [{src:'basketbol1.jpg', cap:'Basketbol Salonu'}, {src:'basketbol2.jpg', cap:'Basketbol Salonu – Yakın'}, {src:'basketbol3.jpg', cap:'Ana Spor Salonu'}],
-    voleybol:   [{src:'basketbol3.jpg', cap:'Voleybol – Ana Spor Salonu'}, {src:'basketbol1.jpg', cap:'Voleybol – Salon İçi'}],
-    tenis:      [{src:'tenis-kapali.jpg', cap:'Kapalı Tenis Kortları'}, {src:'tenis-acik.jpg', cap:'Açık Tenis Kortları'}],
-    pilates:    [{src:'pilates.jpg', cap:'Pilates Reformer Stüdyosu'}],
-    zumba:      [{src:'zumba.jpg', cap:'Zumba Salonu'}],
-    jimnastik:  [{src:'jimnastik.jpg', cap:'Jimnastik Salonu'}, {src:'trambolin.jpg', cap:'Trambolin Salonu'}],
-    masatenisi: [{src:'basketbol2.jpg', cap:'Masa Tenisi – Spor Salonu'}],
+    yuzme:      [{src:'images/yuzme1.jpg', cap:'Olimpik Yüzme Havuzu'}],
+    basketbol:  [{src:'images/basketbol1.jpg', cap:'Basketbol Salonu'}, {src:'images/basketbol2.jpg', cap:'Basketbol Salonu – Yakın'}, {src:'images/basketbol3.jpg', cap:'Ana Spor Salonu'}],
+    voleybol:   [{src:'images/basketbol3.jpg', cap:'Voleybol – Ana Spor Salonu'}, {src:'images/basketbol1.jpg', cap:'Voleybol – Salon İçi'}],
+    tenis:      [{src:'images/tenis-kapali.jpg', cap:'Kapalı Tenis Kortları'}, {src:'images/tenis-acik.jpg', cap:'Açık Tenis Kortları'}],
+    pilates:    [{src:'images/pilates.jpg', cap:'Pilates Reformer Stüdyosu'}],
+    zumba:      [{src:'images/zumba.jpg', cap:'Zumba Salonu'}],
+    jimnastik:  [{src:'images/jimnastik.jpg', cap:'Jimnastik Salonu'}, {src:'images/trambolin.jpg', cap:'Trambolin Salonu'}],
+    masatenisi: [{src:'images/basketbol2.jpg', cap:'Masa Tenisi – Spor Salonu'}],
 };
 let tsItems=[], tsIdx=0;
 function openTesis(brans){
