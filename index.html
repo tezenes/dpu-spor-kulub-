@@ -466,7 +466,10 @@
         /* ── TAKVİM ── */
         #takvim{background:#fff;}
         .table-wrap{overflow-x:auto;border-radius:16px;box-shadow:0 8px 30px rgba(0,0,0,.09);}
-        table{width:100%;border-collapse:collapse;background:#fff;min-width:700px;}
+        table{width:100%;border-collapse:collapse;background:#fff;min-width:700px;table-layout:fixed;}
+        table th:first-child,table td:first-child{width:13%;}
+        table th:not(:first-child),table td:not(:first-child){width:12.4%;}
+        table td{word-break:break-word;vertical-align:middle;}
         thead{background:var(--navy);}
         thead th{padding:1.1rem 1rem;color:#fff;font-size:.78rem;font-weight:700;letter-spacing:1px;text-align:left;text-transform:uppercase;}
         tbody tr{border-bottom:1px solid #f0f0f0;transition:.2s;}
@@ -897,13 +900,11 @@
 <!-- KAYAN BANT -->
 <div class="ticker-wrap">
     <div class="ticker-track">
-        <a href="#takvim" class="ticker-item"><span class="ticker-dot"></span>🎉 23 Nisan Bayram Etkinliği – 23 Nisan Çarşamba</a>
         <a href="#branslar" class="ticker-item"><span class="ticker-dot"></span>🏊 Yüzme – Yeni Başlangıç Grubu Açıldı</a>
         <a href="#iletisim" class="ticker-item"><span class="ticker-dot"></span>📋 2025 Bahar Dönemi Kayıtları Devam Ediyor</a>
         <a href="#branslar" class="ticker-item"><span class="ticker-dot"></span>🏀 Basketbol – Haftalık Antrenmanlar Cuma &amp; Hafta Sonu</a>
         <a href="#branslar" class="ticker-item"><span class="ticker-dot"></span>🧘 Pilates Reformer Sınıfları – Kontenjan Dolmadan Kayıt Ol!</a>
         <a href="#iletisim" class="ticker-item"><span class="ticker-dot"></span>📞 Bilgi için: 0506 479 77 10</a>
-        <a href="#takvim" class="ticker-item"><span class="ticker-dot"></span>🎉 23 Nisan Bayram Etkinliği – 23 Nisan Çarşamba</a>
         <a href="#branslar" class="ticker-item"><span class="ticker-dot"></span>🏊 Yüzme – Yeni Başlangıç Grubu Açıldı</a>
         <a href="#iletisim" class="ticker-item"><span class="ticker-dot"></span>📋 2025 Bahar Dönemi Kayıtları Devam Ediyor</a>
         <a href="#branslar" class="ticker-item"><span class="ticker-dot"></span>🏀 Basketbol – Haftalık Antrenmanlar Cuma &amp; Hafta Sonu</a>
@@ -1220,7 +1221,13 @@
                     </tr>
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#e65100"></div>💃 Zumba</div></td>
-                        <td colspan="7" style="text-align:center;color:#e65100;font-size:.8rem;font-weight:600;letter-spacing:.3px;">Antrenman saatleri sporcu ve antrenör müsaitliğine göre kişisel olarak planlanmaktadır. Bilgi için iletişime geçiniz.</td>
+                        <td>–</td>
+                        <td>–</td>
+                        <td><span class="time-chip">19:00–20:00</span> <small style="color:#aaa;font-size:.65rem;">Grup</small></td>
+                        <td>–</td>
+                        <td><span class="time-chip">19:00–20:00</span> <small style="color:#aaa;font-size:.65rem;">Grup</small></td>
+                        <td>–</td>
+                        <td>–</td>
                     </tr>
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#00695c"></div>🤸 Jimnastik</div></td>
@@ -1391,6 +1398,24 @@
         <div class="basari-grid">
             <div class="basari-card reveal">
                 <div class="basari-ico">🏆</div>
+                <h3>Çanakkale Şehitleri Turnuvası – Şampiyonluk</h3>
+                <p>29 Mart 2025 Pazar günü Talha Eymen Koçer, Gençler kategorisinde <strong>şampiyon</strong> oldu.</p>
+                <span class="byear">Mart 2025</span>
+            </div>
+            <div class="basari-card reveal">
+                <div class="basari-ico">🥇</div>
+                <h3>Çanakkale Şehitleri Turnuvası – Minikler</h3>
+                <p>28 Mart 2025 Cumartesi günü Minikler kategorisinde <strong>Hüseyin Arda Girgin şampiyon</strong> oldu.</p>
+                <span class="byear">Mart 2025</span>
+            </div>
+            <div class="basari-card reveal">
+                <div class="basari-ico">🏅</div>
+                <h3>Çanakkale Şehitleri Turnuvası – Yıldızlar</h3>
+                <p>28 Mart 2025 Cumartesi günü Yıldızlar kategorisinde <strong>Talha Eymen Koçer 3.</strong>, <strong>Eren Şan 4.</strong> oldu.</p>
+                <span class="byear">Mart 2025</span>
+            </div>
+            <div class="basari-card reveal">
+                <div class="basari-ico">🏆</div>
                 <h3>Kütahya Şampiyonu</h3>
                 <p>Kütahya Gençlik ve Spor İl Müdürlüğü organizasyonunda basketbol dalında şampiyonluk.</p>
                 <span class="byear">2024</span>
@@ -1400,18 +1425,6 @@
                 <h3>Voleybol Birincilik</h3>
                 <p>Üniversitelerarası voleybol turnuvasında üstün performans ile birincilik elde edildi.</p>
                 <span class="byear">2024</span>
-            </div>
-            <div class="basari-card reveal">
-                <div class="basari-ico">🏅</div>
-                <h3>Yüzme Başarısı</h3>
-                <p>İl geneli yüzme yarışmalarında sporcularımız podiyuma çıkmayı başardı.</p>
-                <span class="byear">2023</span>
-            </div>
-            <div class="basari-card reveal">
-                <div class="basari-ico">🎾</div>
-                <h3>Tenis Turnuvası</h3>
-                <p>Bölgesel tenis turnuvasında genç sporcularımız başarılı dereceler elde etti.</p>
-                <span class="byear">2023</span>
             </div>
             <div class="basari-card reveal">
                 <div class="basari-ico">⭐</div>
@@ -1438,12 +1451,6 @@
             <div class="sec-line"></div>
         </div>
         <div class="duyuru-grid">
-            <div class="duyuru-card reveal" style="border-left-color:#e63946;">
-                <div class="duyuru-date" style="color:#e63946;">Nisan 2026</div>
-                <h3>🎉 23 Nisan Ulusal Egemenlik ve Çocuk Bayramı</h3>
-                <p>23 Nisan Ulusal Egemenlik ve Çocuk Bayramı kutlamaları kapsamında kulübümüz özel etkinlikler düzenleyecektir. Tüm sporcularımız ve aileleri davetlidir.</p>
-                <span class="duyuru-tag" style="background:#e63946;">23 Nisan</span>
-            </div>
             <div class="duyuru-card reveal">
                 <div class="duyuru-date">Mart 2025</div>
                 <h3>2025 Bahar Dönemi Kayıtları Başladı!</h3>
@@ -1461,12 +1468,6 @@
                 <h3>Pilates Reformer Sınıfları Başlıyor</h3>
                 <p>Modern Reformer cihazlarıyla pilates eğitimlerimiz başlıyor. Vücut farkındalığı ve güçlendirme programı.</p>
                 <span class="duyuru-tag">Pilates</span>
-            </div>
-            <div class="duyuru-card reveal">
-                <div class="duyuru-date">Aralık 2024</div>
-                <h3>Basketbol – Kütahya Gençlik Turnuvası</h3>
-                <p>Basketbol takımımız Kütahya Gençlik ve Spor İl Müdürlüğü organizasyonunda mücadele etti.</p>
-                <span class="duyuru-tag">Basketbol</span>
             </div>
             <div class="duyuru-card reveal">
                 <div class="duyuru-date">Kasım 2024</div>
@@ -1638,7 +1639,7 @@
                 </div>
             </div>
             <div class="tesis-brans-card reveal" onclick="openTesis('tenis')">
-                <img src="images/tenis-kapali.jpg" alt="DPÜ Spor Kulübü Kapalı Tenis Kortu" loading="lazy">
+                <img src="images/WhatsApp Image 2026-03-30 at 14.51.36 tesis.jpeg" alt="DPÜ Spor Kulübü Tenis Kortu" loading="lazy">
                 <div class="tesis-brans-overlay">
                     <div class="tesis-brans-ico">🎾</div>
                     <div class="tesis-brans-name">Tenis</div>
@@ -1646,7 +1647,7 @@
                 </div>
             </div>
             <div class="tesis-brans-card reveal" onclick="openTesis('pilates')">
-                <img src="images/pilates.jpg" alt="DPÜ Spor Kulübü Pilates Salonu" loading="lazy">
+                <img src="images/pilates/WhatsApp Image 2026-04-01 at 15.27.03.jpeg" alt="DPÜ Spor Kulübü Pilates Salonu" loading="lazy">
                 <div class="tesis-brans-overlay">
                     <div class="tesis-brans-ico">🧘</div>
                     <div class="tesis-brans-name">Pilates</div>
@@ -1670,7 +1671,7 @@
                 </div>
             </div>
             <div class="tesis-brans-card reveal" onclick="openTesis('masatenisi')">
-                <img src="images/basketbol2.jpg" alt="DPÜ Spor Kulübü Masa Tenisi Salonu" loading="lazy">
+                <img src="images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.21.jpeg" alt="DPÜ Spor Kulübü Masa Tenisi Salonu" loading="lazy">
                 <div class="tesis-brans-overlay">
                     <div class="tesis-brans-ico">🏓</div>
                     <div class="tesis-brans-name">Masa Tenisi</div>
@@ -2119,11 +2120,11 @@ const tesisData = {
     yuzme:      [{src:'images/yuzme1.jpg', cap:'Olimpik Yüzme Havuzu'}],
     basketbol:  [{src:'images/basketbol1.jpg', cap:'Basketbol Salonu'}, {src:'images/basketbol2.jpg', cap:'Basketbol Salonu – Yakın'}, {src:'images/basketbol3.jpg', cap:'Ana Spor Salonu'}],
     voleybol:   [{src:'images/basketbol3.jpg', cap:'Voleybol – Ana Spor Salonu'}, {src:'images/basketbol1.jpg', cap:'Voleybol – Salon İçi'}],
-    tenis:      [{src:'images/tenis-kapali.jpg', cap:'Kapalı Tenis Kortları'}, {src:'images/tenis-acik.jpg', cap:'Açık Tenis Kortları'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.35 tenis tesis.jpeg', cap:'DPÜ Tenis Kortu'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.35 tesis.jpeg', cap:'DPÜ Tenis Kortu'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.36 tesis.jpeg', cap:'DPÜ Tenis Kortu'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.35.jpeg', cap:'DPÜ Tenis Kortu'}],
-    pilates:    [{src:'images/pilates.jpg', cap:'Pilates Reformer Stüdyosu'}],
+    tenis:      [{src:'images/WhatsApp Image 2026-03-30 at 14.51.35.jpeg', cap:'DPÜ Tenis Kortu'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.35 tesis.jpeg', cap:'DPÜ Tenis Kortu'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.36 tesis.jpeg', cap:'DPÜ Tenis Kortu'}, {src:'images/WhatsApp Image 2026-03-30 at 14.51.35 tenis tesis.jpeg', cap:'DPÜ Tenis Kortu'}],
+    pilates:    [{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.03.jpeg', cap:'DPÜ Pilates Stüdyosu'},{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.04....jpeg', cap:'DPÜ Pilates Stüdyosu'},{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.04.jpeg', cap:'DPÜ Pilates Stüdyosu'},{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.04aaa.jpeg', cap:'DPÜ Pilates Stüdyosu'},{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.04eerr.jpeg', cap:'DPÜ Pilates Stüdyosu'},{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.04ss.jpeg', cap:'DPÜ Pilates Stüdyosu'},{src:'images/pilates/WhatsApp Image 2026-04-01 at 15.27.21eqwewe.jpeg', cap:'DPÜ Pilates Stüdyosu'}],
     zumba:      [{src:'images/zumba.jpg', cap:'Zumba Salonu'}],
     jimnastik:  [{src:'images/jimnastik.jpg', cap:'Jimnastik Salonu'}, {src:'images/trambolin.jpg', cap:'Trambolin Salonu'}],
-    masatenisi: [{src:'images/basketbol2.jpg', cap:'Masa Tenisi – Spor Salonu'}],
+    masatenisi: [{src:'images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.03.jpeg', cap:'DPÜ Masa Tenisi Salonu'},{src:'images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.21.jpeg', cap:'DPÜ Masa Tenisi Salonu'},{src:'images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.21gg.jpeg', cap:'DPÜ Masa Tenisi Salonu'},{src:'images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.21jjj.jpeg', cap:'DPÜ Masa Tenisi Salonu'},{src:'images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.21qqq.jpeg', cap:'DPÜ Masa Tenisi Salonu'},{src:'images/masa tenisi tesis/WhatsApp Image 2026-04-01 at 15.27.21tttt.jpeg', cap:'DPÜ Masa Tenisi Salonu'}],
 };
 let tsItems=[], tsIdx=0;
 function openTesis(brans){
