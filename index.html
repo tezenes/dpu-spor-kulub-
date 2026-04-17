@@ -477,7 +477,11 @@
         tbody tr:hover{background:var(--light);}
         tbody td{padding:.9rem 1rem;font-size:.84rem;color:#444;}
         tbody td:first-child{font-weight:700;color:var(--navy);}
-        .time-chip{display:inline-block;background:var(--red);color:#fff;font-size:.68rem;padding:.2rem .55rem;border-radius:4px;font-weight:600;}
+        .time-chip{display:inline-block;background:var(--red);color:#fff;font-size:.68rem;padding:.2rem .55rem;border-radius:4px;font-weight:600;white-space:nowrap;}
+        .chip-cell{display:flex;flex-direction:column;gap:.55rem;}
+        .chip-row{display:flex;flex-direction:column;align-items:flex-start;gap:.2rem;}
+        .chip-label{color:#666;font-size:.7rem;line-height:1.2;font-weight:500;}
+        tbody td{vertical-align:top;}
         .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
         .flex-row{display:flex;align-items:center;gap:.5rem;}
 
@@ -1192,12 +1196,12 @@
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#0066cc"></div>🏊 Yüzme</div></td>
                         <td>–</td>
-                        <td><span class="time-chip">19:00–20:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
-                        <td><span class="time-chip">19:00–20:30</span> <small style="color:#aaa;font-size:.65rem;">Kondisyon</small></td>
-                        <td><span class="time-chip">19:00–20:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
-                        <td><span class="time-chip">19:00–20:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
-                        <td><span class="time-chip">13:00–14:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">15:00–16:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">17:00–18:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
-                        <td><span class="time-chip">13:00–14:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">15:00–16:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">17:00–18:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
+                        <td><div class="chip-row"><span class="time-chip">19:00–20:30</span><span class="chip-label">Sporcu</span></div></td>
+                        <td><div class="chip-row"><span class="time-chip">19:00–20:30</span><span class="chip-label">Kondisyon</span></div></td>
+                        <td><div class="chip-row"><span class="time-chip">19:00–20:30</span><span class="chip-label">Sporcu</span></div></td>
+                        <td><div class="chip-row"><span class="time-chip">19:00–20:30</span><span class="chip-label">Sporcu</span></div></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">13:00–14:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">15:00–16:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">17:00–18:30</span><span class="chip-label">Sporcu</span></div></div></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">13:00–14:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">15:00–16:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">17:00–18:30</span><span class="chip-label">Sporcu</span></div></div></td>
                     </tr>
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#c8102e"></div>🏀 Basketbol</div></td>
@@ -1205,19 +1209,19 @@
                         <td>–</td>
                         <td>–</td>
                         <td>–</td>
-                        <td><span class="time-chip">18:30–20:00</span> <small style="color:#aaa;font-size:.65rem;">9-12 Yaş</small></td>
-                        <td><span class="time-chip">14:30–15:30</span> <small style="color:#aaa;font-size:.65rem;">6-8 Yaş</small><br><span class="time-chip">15:30–16:30</span> <small style="color:#aaa;font-size:.65rem;">9-12 Yaş</small><br><span class="time-chip">16:30–17:30</span> <small style="color:#aaa;font-size:.65rem;">Kız Grubu</small></td>
-                        <td><span class="time-chip">14:30–15:30</span> <small style="color:#aaa;font-size:.65rem;">6-8 Yaş</small><br><span class="time-chip">15:30–16:30</span> <small style="color:#aaa;font-size:.65rem;">9-12 Yaş</small><br><span class="time-chip">16:30–17:30</span> <small style="color:#aaa;font-size:.65rem;">Kız Grubu</small></td>
+                        <td><div class="chip-row"><span class="time-chip">18:30–20:00</span><span class="chip-label">9-12 Yaş</span></div></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">14:30–15:30</span><span class="chip-label">6-8 Yaş</span></div><div class="chip-row"><span class="time-chip">15:30–16:30</span><span class="chip-label">9-12 Yaş</span></div><div class="chip-row"><span class="time-chip">16:30–17:30</span><span class="chip-label">Kız Grubu</span></div></div></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">14:30–15:30</span><span class="chip-label">6-8 Yaş</span></div><div class="chip-row"><span class="time-chip">15:30–16:30</span><span class="chip-label">9-12 Yaş</span></div><div class="chip-row"><span class="time-chip">16:30–17:30</span><span class="chip-label">Kız Grubu</span></div></div></td>
                     </tr>
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#0d1b3e"></div>🏐 Voleybol</div></td>
                         <td>–</td>
                         <td>–</td>
-                        <td><span class="time-chip">18:30–19:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
+                        <td><div class="chip-row"><span class="time-chip">18:30–19:30</span><span class="chip-label">Sporcu</span></div></td>
                         <td>–</td>
                         <td>–</td>
-                        <td><span class="time-chip">11:00–12:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">12:00–13:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">13:00–14:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
-                        <td><span class="time-chip">11:00–12:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">12:00–13:00</span> <small style="color:#aaa;font-size:.65rem;">Temel</small><br><span class="time-chip">13:00–14:30</span> <small style="color:#aaa;font-size:.65rem;">Sporcu</small></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">11:00–12:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">12:00–13:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">13:00–14:30</span><span class="chip-label">Sporcu</span></div></div></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">11:00–12:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">12:00–13:00</span><span class="chip-label">Temel</span></div><div class="chip-row"><span class="time-chip">13:00–14:30</span><span class="chip-label">Sporcu</span></div></div></td>
                     </tr>
                     <tr>
                         <td><div class="flex-row"><div class="dot" style="background:#2e7d32"></div>🎾 Tenis</div></td>
@@ -1235,9 +1239,9 @@
                         <td><div class="flex-row"><div class="dot" style="background:#e65100"></div>💃 Zumba</div></td>
                         <td>–</td>
                         <td>–</td>
-                        <td><span class="time-chip">19:00–20:00</span> <small style="color:#aaa;font-size:.65rem;">Grup</small></td>
+                        <td><div class="chip-row"><span class="time-chip">19:00–20:00</span><span class="chip-label">Grup</span></div></td>
                         <td>–</td>
-                        <td><span class="time-chip">19:00–20:00</span> <small style="color:#aaa;font-size:.65rem;">Grup</small></td>
+                        <td><div class="chip-row"><span class="time-chip">19:00–20:00</span><span class="chip-label">Grup</span></div></td>
                         <td>–</td>
                         <td>–</td>
                     </tr>
@@ -1245,11 +1249,11 @@
                         <td><div class="flex-row"><div class="dot" style="background:#00695c"></div>🤸 Jimnastik</div></td>
                         <td>–</td>
                         <td>–</td>
-                        <td><span class="time-chip">18:30–20:30</span> <small style="color:#aaa;font-size:.65rem;">performans</small></td>
-                        <td><span class="time-chip">18:30–20:30</span> <small style="color:#aaa;font-size:.65rem;">performans</small></td>
+                        <td><div class="chip-row"><span class="time-chip">18:30–20:30</span><span class="chip-label">Performans</span></div></td>
+                        <td><div class="chip-row"><span class="time-chip">18:30–20:30</span><span class="chip-label">Performans</span></div></td>
                         <td>–</td>
-                        <td><span class="time-chip">10:00–11:00</span> <small style="color:#aaa;font-size:.65rem;">baby gym 18-36 ay</small><br><span class="time-chip">11:00–12:00</span> <small style="color:#aaa;font-size:.65rem;">3-5 Yaş</small><br><span class="time-chip">12:00–13:00</span> <small style="color:#aaa;font-size:.65rem;">3-5 Yaş</small><br><span class="time-chip">13:00–14:00</span> <small style="color:#aaa;font-size:.65rem;">6-9 Yaş</small><br><span class="time-chip">15:00–16:00</span> <small style="color:#aaa;font-size:.65rem;">3-5 Yaş</small><br><span class="time-chip">15:00–17:00</span> <small style="color:#aaa;font-size:.65rem;">performans</small></td>
-                        <td><span class="time-chip">11:00–12:00</span> <small style="color:#aaa;font-size:.65rem;">3-5 Yaş</small><br><span class="time-chip">12:00–13:00</span> <small style="color:#aaa;font-size:.65rem;">3-5 Yaş</small><br><span class="time-chip">13:00–14:00</span> <small style="color:#aaa;font-size:.65rem;">6-9 Yaş</small><br><span class="time-chip">14:00–15:00</span> <small style="color:#aaa;font-size:.65rem;">6-9 Yaş</small><br><span class="time-chip">15:00–16:00</span> <small style="color:#aaa;font-size:.65rem;">3-5 Yaş</small><br><span class="time-chip">15:00–17:00</span> <small style="color:#aaa;font-size:.65rem;">performans</small></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">10:00–11:00</span><span class="chip-label">Baby Gym 18-36 ay</span></div><div class="chip-row"><span class="time-chip">11:00–12:00</span><span class="chip-label">3-5 Yaş</span></div><div class="chip-row"><span class="time-chip">12:00–13:00</span><span class="chip-label">3-5 Yaş</span></div><div class="chip-row"><span class="time-chip">13:00–14:00</span><span class="chip-label">6-9 Yaş</span></div><div class="chip-row"><span class="time-chip">15:00–16:00</span><span class="chip-label">3-5 Yaş</span></div><div class="chip-row"><span class="time-chip">15:00–17:00</span><span class="chip-label">Performans</span></div></div></td>
+                        <td><div class="chip-cell"><div class="chip-row"><span class="time-chip">11:00–12:00</span><span class="chip-label">3-5 Yaş</span></div><div class="chip-row"><span class="time-chip">12:00–13:00</span><span class="chip-label">3-5 Yaş</span></div><div class="chip-row"><span class="time-chip">13:00–14:00</span><span class="chip-label">6-9 Yaş</span></div><div class="chip-row"><span class="time-chip">14:00–15:00</span><span class="chip-label">6-9 Yaş</span></div><div class="chip-row"><span class="time-chip">15:00–16:00</span><span class="chip-label">3-5 Yaş</span></div><div class="chip-row"><span class="time-chip">15:00–17:00</span><span class="chip-label">Performans</span></div></div></td>
                     </tr>
                 </tbody>
             </table>
